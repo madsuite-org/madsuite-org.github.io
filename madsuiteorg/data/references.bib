@@ -1,3 +1,18 @@
+@misc{shinExaModelsAlgebraicModeling2026,
+  title = {{{ExaModels}}.Jl: An Algebraic Modeling System for Nonlinear Programming on {{GPUs}}},
+  author = {Shin, Sungho and Schanen, Michel and Pacaud, Fran{\c c}ois and Montoison, Alexis and Anitescu, Mihai},
+  year = {2026},
+  month = aug,
+  number = {arXiv:2608.16265},
+  eprint = {2608.16265},
+  primaryclass = {math.OC},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.2608.16265},
+  abstract = {Large-scale nonlinear programs often contain partially separable and repetitive structure that most existing algebraic modeling systems do not leverage. Since optimization solvers evaluate the objective, the constraints, and their derivatives at each iteration, evaluation speed directly affects total solution time. We present ExaModels.jl, a Julia-based algebraic modeling system that exploits this structure to evaluate the objective, the constraints, and their derivatives in parallel. The approach rests on a single-instruction, multiple-data abstraction that represents a nonlinear program as algebraic patterns repeated over data points. Because the patterns are visible at compile time, specialized derivative evaluation kernels can be generated for GPU parallelism, giving O(1) evaluation time regardless of the number of data points. Numerical results show up to 76x speedup for sparse Hessian evaluation on Luksan-Vlcek instances, with further gains on the COPS and PGLIB-OPF benchmarks.},
+  archiveprefix = {arXiv},
+  keywords = {Mathematics - Optimization and Control}
+}
+
 @article{pacaudAcceleratingCondensedInteriorPoint2023,
   title = {Accelerating {{Condensed Interior-Point Methods}} on {{SIMD}}/{{GPU Architectures}}},
   author = {Pacaud, Fran{\c c}ois and Shin, Sungho and Schanen, Michel and Maldonado, Daniel Adrian and Anitescu, Mihai},
