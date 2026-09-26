@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MadSuite</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg border-bottom fixed-top bg-white">
+    <div class="container">
+      <a class="navbar-brand" href="#"><strong>MadSuite</strong></a>
+    </div>
+  </nav>
+  
+  <!-- Main Content -->
+  <div style="margin-top: 70px; margin-bottom: 70px;">
+  <div class="container my-5">
+    
+    <h1 class="mb-4">MadSuite: An Optimization Software Suite for GPUs</h1>
+    <p>
+        Welcome to 
+            <a href="https://github.com/MadNLP">MadSuite</a>
+             website! Our mission is to deliver optimization software with state-of-the-art GPU acceleration. The performance of GPU-accelerated optimization solvers is <a href="https://arxiv.org/abs/2405.14236">successfully demonstrated</a> on the AC optimal power flow problems, optimal control problems, and other large-scale nonlinear optimization problems. For large-scale problems, using GPU acceleration often enables more than an order of magnitude speed-up, as demonstrated with the performance of ExaModels.jl and MadNLP.jl running on GPUs along with CUDSS compared to the state-of-the-art tools on CPUs for solving large AC optimal power flow problems. <div style="max-width: 800px"> <figure> <img src="assets/time-to-solution-opf.png" style="width: 100%"> <figcaption>Figure 1: Solution time for AC optimal power flow for the 70k bus system running on different hardware</figcaption> </figure> </div>
+
+    </p>
+    <h2 class="mt-5">What's MadSuite?</h2>
+    <p>
+        MadSuite is a suite of open-source optimization software encompassing algebraic modeling systems, optimization solvers, linear solvers, and domain-specific modeling libraries. Our software tools are embedded in the 
+            <a href="https://julialang.org/">Julia Language</a>
+            , which is host a variety of excellent libraries for optimization, such as 
+            <a href="https://jump.dev/">JuMP.jl</a>
+             and 
+            <a href="https://jso.dev/">JuliaSmoothOptimizers</a>
+            , as well as extensive support for GPU programming, such as 
+            <a href="https://github.com/JuliaGPU/CUDA.jl">CUDA.jl</a>
+             and 
+            <a href="https://github.com/JuliaGPU/KernelAbstractions.jl">KernelAbstractions.jl</a>
+            . We employ the latest advancements in GPU computing, such as NVIDIA's 
+            <a href="https://developer.nvidia.com/cudss">CUDSS</a>
+             library, to provide high-performance solutions for large-scale nonlinear optimization problems.
+
+    </p>
+    <h2 class="mt-5">News</h2>
+    <ul>
+        
+        <li>
+        MadSuite will be presented at IEEE PowerTech 2025 in the tutorial session on GPU-Accelerated Optimization for Power Systems with MadNLP and ExaModels. (<a href="https://2025.ieee-powertech.org/tutorials/#1744358367373-8b3025fb-3285">June 2025</a>)
+        </li>
+        
+    </ul>
+    <h2 class="mt-5">Useful Resources</h2>
+    <ul>
+        
+        <li>
+        NVIDIA Technology Blog: NVIDIA cuDSS Library Removes Barriers to Optimizing the U.S. Power Grid [ <a href="https://developer.nvidia.com/blog/nvidia-cudss-library-removes-barriers-to-optimizing-the-us-power-grid/">Link</a> ]
+        </li>
+        
+
+        <li>
+        Julia Discourse: ExaModels.jl and MadNLP.jl on GPUs [ <a href="https://discourse.julialang.org/t/examodels-jl-and-madnlp-jl-on-gpus/111377">Link</a> ]
+        </li>
+        
+
+        <li>
+        Julia Discourse: AC Optimal Power Flow in various nonlinear optimization frameworks [ <a href="https://discourse.julialang.org/t/ac-optimal-power-flow-in-various-nonlinear-optimization-frameworks/78486/81">Link</a> ]
+        </li>
+        
+
+        <li>
+        PowerTech 2025: Tutorial on GPU-Accelerated Optimization for Power Systems with MadNLP and ExaModels [ <a href="https://madsuite.org/powertech2025">Link</a> ]
+        </li>
+        
+    </ul>
+    <h2 class="mt-5">Members</h2>
+    <ul>
+        
+        <li>
+            <a href="https://shin.mit.edu"><strong>Sungho Shin</strong></a> (<a href="https://github.com/sshin23">@sshin23</a>): Sungho Shin is an assistant professor at the Chemial Engineering Department of Massachusetts Institute of Technology.
+        </li>
+        
+
+        <li>
+            <a href="https://frapac.github.io/"><strong>François Pacaud</strong></a> (<a href="https://github.com/frapac">@frapac</a>): François Pacaud is an assistant professor at the Centre Automatique et Systèmes within Mines Paris-PSL.
+        </li>
+        
+
+        <li>
+            <a href="https://www.linkedin.com/in/alexis-montoison/"><strong>Alexis Montoison</strong></a> (<a href="https://github.com/amontoison">@amontoison</a>): Alexis Montoison is a postdoctoral researcher at the Argonne National Laboratory.
+        </li>
+        
+    </ul>
+    <h2 class="mt-5">Packages</h2>
+    <ul>
+        
+        <li>
+            <strong><a href="https://github.com/MadNLP/MadNLP.jl">MadNLP.jl</a></strong>: A nonlinear programming solver based on the filter line-search interior point method (as in Ipopt) that can handle/exploit diverse classes of data structures, either on host or device memories.
+        </li>
+        
+
+        <li>
+            <strong><a href="https://github.com/MadNLP/MadIPM.jl">MadIPM.jl</a></strong>: MadIPM.jl is an extension of MadNLP.jl for linear and quadratic programming. It implements the Mehrotra predictor-corrector method, leading to faster convergence than the default filter line-search algorithm used in MadNLP.
+        </li>
+        
+
+        <li>
+            <strong><a href="https://github.com/exanauts/ExaModels.jl">ExaModels.jl</a></strong>: An algebraic modeling and automatic differentiation tool in Julia Language, specialized for SIMD abstraction of nonlinear programs.
+        </li>
+        
+
+        <li>
+            <strong><a href="https://github.com/exanauts/ExaModelsPower.jl">ExaModelsPower.jl</a></strong>: ExaModelsPower.jl is a Julia package for modeling and solving power systems optimization problems, built on top of ExaModels.jl.
+        </li>
+        
+
+        <li>
+            <strong><a href="https://github.com/exanauts/ExaModelsExamles.jl">ExaModelsExamples.jl</a></strong>: A collection of examples demonstrating the use of ExaModels.jl for various optimization problems, including power systems, optimal control problems, and COPS benchmark problems.
+        </li>
+        
+
+        <li>
+            <strong><a href="https://github.com/exanauts/CUDSS.jl">CUDSS.jl</a></strong>: CUDSS.jl is a Julia interface to the NVIDIA cuDSS library. NVIDIA cuDSS provides three factorizations (LDU, LDLᵀ, LLᵀ) for solving sparse linear systems on GPUs.
+        </li>
+        
+    </ul>
+    <h2 class="mt-5">Publications</h2>
+    <ul>
+        <li>David Cole, Sungho Shin, Fran<span class="bibtex-protected">ç</span>ois Pacaud, Victor&nbsp;M. Zavala, and Mihai Anitescu.
+Exploiting <span class="bibtex-protected"><span class="bibtex-protected">GPU</span></span>/<span class="bibtex-protected"><span class="bibtex-protected">SIMD Architectures</span></span> for <span class="bibtex-protected"><span class="bibtex-protected">Solving Linear-Quadratic MPC Problems</span></span>*.
+In <em>2023 <span class="bibtex-protected"><span class="bibtex-protected">American Control Conference</span></span> (<span class="bibtex-protected"><span class="bibtex-protected">ACC</span></span>)</em>, 3995–4000. May 2023.
+<a href="https://doi.org/10.23919/ACC55779.2023.10155791">doi:10.23919/ACC55779.2023.10155791</a>.</li>
+<li>Fran<span class="bibtex-protected">ç</span>ois Pacaud, Michel Schanen, Sungho Shin, Daniel&nbsp;Adrian Maldonado, and Mihai Anitescu.
+Parallel interior-point solver for block-structured nonlinear programs on <span class="bibtex-protected"><span class="bibtex-protected">SIMD</span></span>/<span class="bibtex-protected"><span class="bibtex-protected">GPU</span></span> architectures.
+<em>Optimization Methods and Software</em>, 39(4):874–897, July 2024.
+<a href="https://doi.org/10.1080/10556788.2024.2329646">doi:10.1080/10556788.2024.2329646</a>.</li>
+<li>Fran<span class="bibtex-protected">ç</span>ois Pacaud and Sungho Shin.
+<span class="bibtex-protected"><span class="bibtex-protected">GPU-accelerated</span></span> nonlinear model predictive control with <span class="bibtex-protected"><span class="bibtex-protected">ExaModels</span></span> and <span class="bibtex-protected"><span class="bibtex-protected">MadNLP</span></span>.
+March 2024.
+<a href="https://arxiv.org/abs/2403.15913">arXiv:2403.15913</a>, <a href="https://doi.org/10.48550/arXiv.2403.15913">doi:10.48550/arXiv.2403.15913</a>.</li>
+<li>Fran<span class="bibtex-protected">ç</span>ois Pacaud, Sungho Shin, Alexis Montoison, Michel Schanen, and Mihai Anitescu.
+Condensed-space methods for nonlinear programming on <span class="bibtex-protected"><span class="bibtex-protected">GPUs</span></span>.
+May 2024.
+<a href="https://arxiv.org/abs/2405.14236">arXiv:2405.14236</a>, <a href="https://doi.org/10.48550/arXiv.2405.14236">doi:10.48550/arXiv.2405.14236</a>.</li>
+<li>Fran<span class="bibtex-protected">ç</span>ois Pacaud, Sungho Shin, Michel Schanen, Daniel&nbsp;Adrian Maldonado, and Mihai Anitescu.
+Accelerating <span class="bibtex-protected"><span class="bibtex-protected">Condensed Interior-Point Methods</span></span> on <span class="bibtex-protected"><span class="bibtex-protected">SIMD</span></span>/<span class="bibtex-protected"><span class="bibtex-protected">GPU Architectures</span></span>.
+<em>Journal of Optimization Theory and Applications</em>, February 2023.
+<a href="https://doi.org/10.1007/s10957-022-02129-5">doi:10.1007/s10957-022-02129-5</a>.</li>
+<li>Sungho Shin, Mihai Anitescu, and Fran<span class="bibtex-protected">ç</span>ois Pacaud.
+Accelerating optimal power flow with <span class="bibtex-protected"><span class="bibtex-protected">GPUs</span></span>: <span class="bibtex-protected"><span class="bibtex-protected">SIMD</span></span> abstraction of nonlinear programs and condensed-space interior-point methods.
+<em>Electric Power Systems Research</em>, 236:110651, November 2024.
+<a href="https://doi.org/10.1016/j.epsr.2024.110651">doi:10.1016/j.epsr.2024.110651</a>.</li>
+<li>Sungho Shin, Vishwas Rao, Michel Schanen, D.&nbsp;Adrian Maldonado, and Mihai Anitescu.
+Scalable <span class="bibtex-protected"><span class="bibtex-protected">Multi-Period AC Optimal Power Flow Utilizing GPUs</span></span> with <span class="bibtex-protected"><span class="bibtex-protected">High Memory Capacities</span></span>.
+May 2024.
+<a href="https://arxiv.org/abs/2405.14032">arXiv:2405.14032</a>, <a href="https://doi.org/10.48550/arXiv.2405.14032">doi:10.48550/arXiv.2405.14032</a>.</li>
+<li>Sungho Shin, Michel Schanen, Fran<span class="bibtex-protected">ç</span>ois Pacaud, Alexis Montoison, and Mihai Anitescu.
+<span class="bibtex-protected"><span class="bibtex-protected">ExaModels</span></span>.jl: an algebraic modeling system for nonlinear programming on <span class="bibtex-protected"><span class="bibtex-protected">GPUs</span></span>.
+August 2026.
+<a href="https://arxiv.org/abs/2608.16265">arXiv:2608.16265</a>, <a href="https://doi.org/10.48550/arXiv.2608.16265">doi:10.48550/arXiv.2608.16265</a>.</li>
+    </ul>
+    <h2 class="mt-5">Videos</h2>
+    <ul>
+        
+        <li>
+        Sungho Shin, Large-Scale Nonlinear Programming on GPUs: State-of-the-Art and Future Prospects, April 2024<br>
+        <div style="max-width: 800px">
+        <div style="aspect-ratio: 16 / 9; width: 100%;">
+        <iframe
+        src="https://www.youtube.com/embed/MzV9Crph4BA?si=1u50D-4JuFTisjN9"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        style="width: 100%; height: 100%;"
+        ></iframe>
+        </div>
+        </div>
+        </li>
+        
+    </ul>
+    
+  </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer class="border-top py-3 bg-white">
+    <div class="container text-center text-muted small">
+      &copy; 2026 MadSuite. All rights reserved.
+    </div>
+  </footer>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
