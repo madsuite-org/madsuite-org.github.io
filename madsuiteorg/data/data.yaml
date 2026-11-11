@@ -68,9 +68,6 @@ packages:
       - name: "NLPModelsExtensions.jl"
         url: "https://github.com/madsuite-org/NLPModelsExtensions.jl"
         description: "Extensions to NLPModels.jl"
-      - name: "ExaPowerIO.jl"
-        url: "https://github.com/madsuite-org/ExaPowerIO.jl"
-        description: "Minimal reader for the MATPOWER power system data format"
   - category: "Domain-specific libraries"
     items:
       - name: "ExaModelsPower.jl"
@@ -84,6 +81,9 @@ packages:
       - name: "MadCheck.jl"
         url: "https://github.com/madsuite-org/MadCheck.jl"
         description: "Automatic diagnosis tool for nonlinear programs"
+      - name: "ExaPowerIO.jl"
+        url: "https://github.com/madsuite-org/ExaPowerIO.jl"
+        description: "Minimal reader for the MATPOWER power system data format"
   - category: "Benchmark libraries"
     items:
       - name: "COPSBenchmark.jl"
