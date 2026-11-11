@@ -32,7 +32,7 @@ members:
   - name: Alexis Montoison
     url: https://www.linkedin.com/in/alexis-montoison/
     github: amontoison
-    description: Alexis Montoison is a postdoctoral researcher at the Argonne National Laboratory.
+    description: Alexis Montoison is at AMD.
 
 resources:
   - description: "NVIDIA Technology Blog: NVIDIA cuDSS Library Removes Barriers to Optimizing the U.S. Power Grid"
