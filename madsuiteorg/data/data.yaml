@@ -16,6 +16,8 @@ description: >
   Our software tools are embedded in the {Julia Language}, which is host a variety of excellent libraries for optimization, such as {JuMP.jl} and {JuliaSmoothOptimizers}, as well as extensive support for GPU programming, such as {CUDA.jl} and {KernelAbstractions.jl}.
   We employ the latest advancements in GPU computing, such as NVIDIA's {CUDSS} library, to provide high-performance solutions for large-scale nonlinear optimization problems.
   
+mailing_list: "https://mailman.mit.edu/mailman/listinfo/madsuite"
+
 domain: "madsuite.org"
 
 members:
@@ -114,22 +116,207 @@ news:
     link: "https://2025.ieee-powertech.org/tutorials/#1744358367373-8b3025fb-3285"
     
 talks:
-  - title: "IFAC 2026 pre-congress workshop"
-    date: "August 2026"
-    description: "GPU Acceleration in Optimization and Optimal Control"
-    links: [["Website", "https://madsuite.org/ifac2026/"], ["Notebooks", "https://github.com/madsuite-org/ifac2026-notebooks"]]
-  - title: "2025 INFORMS Annual Meeting"
-    date: "October 2025"
-    description: "Solving Large-Scale, Sparse, Constrained Nonlinear Optimization Problems on GPUs"
-    links: [["Slides", "https://github.com/madsuite-org/slides-informs-2025/blob/main/Shin-slides.pdf"]]
-  - title: "IEEE PowerTech 2025 tutorial"
-    date: "June 2025"
-    description: "GPU-Accelerated Optimization for Power Systems with MadNLP and ExaModels"
-    links: [["Website", "https://madsuite.org/powertech2025"]]
-  - title: "Talk by Sungho Shin"
-    date: "April 2024"
-    description: "Large-Scale Nonlinear Programming on GPUs: State-of-the-Art and Future Prospects"
-    links: [["Video", "https://www.youtube.com/watch?v=MzV9Crph4BA"]]
+- title: IFAC 2026 pre-congress workshop (WS-12), Busan
+  date: August 2026
+  speaker: ''
+  description: GPU Acceleration in Optimization and Optimal Control
+  links:
+  - - Website
+    - https://madsuite.org/ifac2026/
+  - - Slides
+    - https://madsuite.org/ifac2026/slides.pdf
+  - - Notebooks
+    - https://github.com/madsuite-org/ifac2026-notebooks
+- title: PSCC 2026, Limassol
+  date: June 2026
+  speaker: François Pacaud
+  description: An augmented Lagrangian method on GPU for security-constrained AC optimal power flow
+  links:
+  - - Slides
+    - https://frapac.github.io/pdf/PSCC2026.pdf
+- title: SIAM Conference on Optimization 2026, Edinburgh
+  date: June 2026
+  speaker: Sungho Shin
+  description: 'ExaModels.jl: a SIMD abstraction for GPU-accelerated nonlinear programming'
+  links:
+  - - Slides
+    - https://jump.dev/assets/jump-dev-workshops/2026/slides_siam_sungho.pdf
+- title: JuMP-dev 2026, Edinburgh
+  date: May 2026
+  speaker: Sungho Shin
+  description: Can ExaModels power JuMP on GPUs?
+  links:
+  - - Video
+    - https://youtu.be/67-_Xmgxf1c
+  - - Slides
+    - https://sshin23.github.io/slides-jump-dev-2026/
+- title: JuMP-dev 2026, Edinburgh
+  date: May 2026
+  speaker: François Pacaud
+  description: 'Batched optimization solvers: a tour d''horizon'
+  links:
+  - - Video
+    - https://youtu.be/dU0-UpvWK6Q
+  - - Slides
+    - https://jump.dev/assets/jump-dev-workshops/2026/slides_francois.pdf
+- title: GT Optimisation, Paris
+  date: March 2026
+  speaker: François Pacaud
+  description: Accelerating optimization solvers on GPUs
+  links:
+  - - Slides
+    - https://frapac.github.io/pdf/GTOPT2026.pdf
+- title: RTE R&D, Paris
+  date: March 2026
+  speaker: François Pacaud
+  description: Solving large-scale LPs on modern GPUs
+  links:
+  - - Slides
+    - https://frapac.github.io/pdf/RTE2026.pdf
+- title: SPOT seminar, Toulouse
+  date: February 2026
+  speaker: François Pacaud
+  description: GPU-accelerated interior-point solvers
+  links:
+  - - Slides
+    - https://frapac.github.io/pdf/PACAUD_SPOT2026.pdf
+- title: IIT Applied Mathematics Seminar, Chicago
+  date: January 2026
+  speaker: Alexis Montoison
+  description: 'MadSuite: GPU solvers for large-scale optimization'
+  links:
+  - - Event
+    - https://today.iit.edu/applied-mathematics-seminar-by-alexis-montoison-madsuite-gpu-solvers-for-large-scale-optimization-by-dr-alexis-montoison-anl/
+- title: NeurIPS 2025 ScaleOpt workshop, San Diego
+  date: December 2025
+  speaker: Sungho Shin
+  description: GPU implementation of second-order linear and nonlinear programming solvers
+  links:
+  - - Event
+    - https://neurips.cc/virtual/2025/123908
+- title: JuMP-dev 2025, Auckland
+  date: November 2025
+  speaker: Alexis Montoison
+  description: MadIPM.jl
+  links:
+  - - Video
+    - https://youtu.be/1qEwygP0nxo
+  - - Slides
+    - https://jump.dev/assets/jump-dev-workshops/2025/talk-alexis-montoison-madipm.pdf
+- title: PGMO Days 2025, Palaiseau
+  date: November 2025
+  speaker: François Pacaud
+  description: 'MadIPM: a GPU-accelerated solver for linear programming'
+  links:
+  - - Slides
+    - https://frapac.github.io/pdf/PGMO2025.pdf
+- title: 2025 INFORMS Annual Meeting
+  date: October 2025
+  speaker: Sungho Shin
+  description: Solving large-scale, sparse, constrained nonlinear optimization problems on GPUs
+  links:
+  - - Slides
+    - https://github.com/madsuite-org/slides-informs-2025/blob/main/Shin-slides.pdf
+- title: Guest lecture, Georgia Tech ISyE
+  date: October 2025
+  speaker: François Pacaud
+  description: GPU-accelerated optimal control
+  links:
+  - - Slides
+    - https://frapac.github.io/pdf/madnlp_optimal_control.pdf
+- title: ICCOPT 2025, Los Angeles
+  date: July 2025
+  speaker: Alexis Montoison
+  description: Recovering sparse DFT on missing signals via interior point method on GPU
+  links:
+  - - Event
+    - https://iccopt2025usc.sched.com/event/1dqr7/parallel-sessions-7f-gpu-accelerated-mathematical-programming-part-ii
+- title: Guest lecture, TU Hamburg
+  date: July 2025
+  speaker: François Pacaud
+  description: Solving large-scale optimal power flow instances
+  links:
+  - - Slides
+    - https://frapac.github.io/pdf/madnlp_opf.pdf
+- title: IEEE PowerTech 2025 tutorial, Kiel
+  date: June 2025
+  speaker: François Pacaud and Sungho Shin
+  description: GPU-accelerated optimization for power systems with MadNLP and ExaModels
+  links:
+  - - Website
+    - https://madsuite.org/powertech2025
+- title: SYSCOP seminar, University of Freiburg
+  date: April 2025
+  speaker: François Pacaud
+  description: GPU-accelerated nonlinear programming with MadNLP
+  links:
+  - - Slides
+    - https://www.syscop.de/files/users/armin.nurkanovic/syscop_seminar.pdf
+- title: MIT CSE Community Seminar
+  date: April 2025
+  speaker: Sungho Shin
+  description: Solving large-scale, sparse, constrained nonlinear optimization problems on GPUs
+  links:
+  - - Event
+    - https://cse.mit.edu/seminars-and-events/cse-community-seminar-4apr25/
+- title: IEEE CDC 2024, Milan
+  date: December 2024
+  speaker: François Pacaud
+  description: GPU-accelerated dynamic nonlinear optimization with ExaModels and MadNLP
+  links:
+  - - Slides
+    - https://frapac.github.io/pdf/CDC2024.pdf
+- title: ICTEAM seminar, UCLouvain
+  date: December 2024
+  speaker: François Pacaud
+  description: 'MadNLP: a GPU-ready interior-point solver'
+  links:
+  - - Slides
+    - https://cloud.minesparis.psl.eu/index.php/s/tx9ki4sjaipNQRZ/download
+- title: Julia & Optimization Days 2024, Toulouse
+  date: October 2024
+  speaker: François Pacaud
+  description: 'MadNLP: nonlinear programming on GPUs'
+  links:
+  - - Slides
+    - https://indico.mathrice.fr/event/604/contributions/1289/attachments/1188/1818/madnlp_juliadays2024.pdf
+- title: Recorded talk
+  date: April 2024
+  speaker: Sungho Shin
+  description: 'Large-scale nonlinear programming on GPUs: state of the art and future prospects'
+  links:
+  - - Video
+    - https://www.youtube.com/watch?v=MzV9Crph4BA
+- title: JuMP-dev 2022 at JuliaCon
+  date: July 2022
+  speaker: François Pacaud
+  description: 'Streamlining nonlinear programming on GPUs: towards a vectorized modeler?'
+  links:
+  - - Video
+    - https://www.youtube.com/watch?v=97hqEglvq2U
+  - - Slides
+    - https://frapac.github.io/pdf/JULIACON2022.pdf
+- title: ICCOPT 2022, Bethlehem
+  date: July 2022
+  speaker: François Pacaud
+  description: 'Reduced-space interior-point: a GPU accelerated comeback'
+  links:
+  - - Slides
+    - https://frapac.github.io/pdf/ICCOPT2022.pdf
+- title: JuMP track at JuliaCon 2021
+  date: July 2021
+  speaker: Sungho Shin
+  description: 'MadNLP.jl: a mad nonlinear programming solver'
+  links:
+  - - Video
+    - https://www.youtube.com/watch?v=c7lx_hu4AgE
+- title: JuMP-dev 2021
+  date: July 2021
+  speaker: François Pacaud
+  description: Towards nonlinear programming on the GPU
+  links:
+  - - Video
+    - https://www.youtube.com/watch?v=q57OwxVBZ5M
 
 links:
   - name: "MadSuite"

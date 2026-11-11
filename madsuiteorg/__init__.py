@@ -92,7 +92,7 @@ def build():
     talks_html = "\n".join([
         f"""
         <li>
-        <strong>{talk['title']}</strong> ({talk['date']}): {talk['description']}.
+        <strong>{talk['title']}</strong> ({talk['date']}){(', ' + talk['speaker']) if talk.get('speaker') else ''}: {talk['description']}.
         """ + ", ".join(f'<a href="{u}">{n}</a>' for n, u in talk['links']) + "</li>"
         for talk in DATA.get('talks', [])
     ])
@@ -112,6 +112,9 @@ def build():
     content = f"""
     <p>
         {INTRO}
+    </p>
+    <p class="mt-3">
+        <strong>Stay in touch:</strong> subscribe to the <a href="{DATA.get('mailing_list', '')}">MadSuite mailing list</a> for updates.
     </p>
     <h2 class="mt-5">What's MadSuite?</h2>
     <p>
