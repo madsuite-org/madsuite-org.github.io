@@ -42,7 +42,6 @@ def build():
     MEMBERS = DATA.get('members', [])
     PACKAGES = DATA.get('packages', [])
     NEWS = DATA.get('news', [])
-    VIDEOS = DATA.get('videos', [])
     LINKS = DATA.get('links', [])
     DOMAIN = DATA.get('domain', '')
     
@@ -78,31 +77,26 @@ def build():
 
     packages_html = "\n".join([
         f"""
-        <li>
-            <strong><a href="{pkg['url']}">{pkg['name']}</a></strong>: {pkg['description']}
-        </li>
-        """ for pkg in PACKAGES
+        <h4 class="mt-4">{cat['category']}</h4>
+        <ul>
+        """ + "\n".join([
+            f"""
+            <li>
+                <strong><a href="{pkg['url']}">{pkg['name']}</a></strong>: {pkg['description']}
+            </li>
+            """ for pkg in cat['items']
+        ]) + "</ul>"
+        for cat in PACKAGES
     ])
 
-    videos_html = "\n".join([
+    talks_html = "\n".join([
         f"""
         <li>
-        {video['presenter']}, {video['description']}, {video['date']}<br>
-        <div style="max-width: 800px">
-        <div style="aspect-ratio: 16 / 9; width: 100%;">
-        <iframe
-        src="https://www.youtube.com/embed/{video['youtube']}"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        style="width: 100%; height: 100%;"
-        ></iframe>
-        </div>
-        </div>
-        </li>
-        """ for video in DATA.get('videos', [])
+        <strong>{talk['title']}</strong> ({talk['date']}): {talk['description']}.
+        """ + ", ".join(f'<a href="{u}">{n}</a>' for n, u in talk['links']) + "</li>"
+        for talk in DATA.get('talks', [])
     ])
-    
+
     # Generate HTML list for publications
     bib_data = parse_file(
         pkg_resources.files(__package__).joinpath('data/references.bib'),
@@ -116,7 +110,6 @@ def build():
 
     # Combine all content
     content = f"""
-    <h1 class="mb-4">MadSuite: An Optimization Software Suite for GPUs</h1>
     <p>
         {INTRO}
     </p>
@@ -137,16 +130,14 @@ def build():
         {members_html}
     </ul>
     <h2 class="mt-5">Packages</h2>
-    <ul>
-        {packages_html}
-    </ul>
+    {packages_html}
     <h2 class="mt-5">Publications</h2>
     <ul>
         {publications_html}
     </ul>
-    <h2 class="mt-5">Videos</h2>
+    <h2 class="mt-5">Tutorials and Talks</h2>
     <ul>
-        {videos_html}
+        {talks_html}
     </ul>
     """
 

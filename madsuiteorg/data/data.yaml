@@ -22,7 +22,7 @@ members:
   - name: Sungho Shin
     url: https://shin.mit.edu
     github: sshin23
-    description: Sungho Shin is an assistant professor at the Chemial Engineering Department of Massachusetts Institute of Technology.
+    description: Sungho Shin is an assistant professor at the Chemical Engineering Department of Massachusetts Institute of Technology.
   - name: François Pacaud
     url: https://frapac.github.io/
     github: frapac
@@ -43,35 +43,100 @@ resources:
     url: "https://madsuite.org/powertech2025" 
     
 packages:
-  - name: "MadNLP.jl"
-    url: "https://github.com/MadNLP/MadNLP.jl"
-    description: A nonlinear programming solver based on the filter line-search interior point method (as in Ipopt) that can handle/exploit diverse classes of data structures, either on host or device memories.
-  - name: "MadIPM.jl"
-    url: "https://github.com/MadNLP/MadIPM.jl"
-    description: MadIPM.jl is an extension of MadNLP.jl for linear and quadratic programming. It implements the Mehrotra predictor-corrector method, leading to faster convergence than the default filter line-search algorithm used in MadNLP.
-  - name: "ExaModels.jl"
-    url: "https://github.com/exanauts/ExaModels.jl"
-    description: An algebraic modeling and automatic differentiation tool in Julia Language, specialized for SIMD abstraction of nonlinear programs.
-  - name: "ExaModelsPower.jl"
-    url: "https://github.com/exanauts/ExaModelsPower.jl"
-    description: ExaModelsPower.jl is a Julia package for modeling and solving power systems optimization problems, built on top of ExaModels.jl.
-  - name: "ExaModelsExamples.jl"
-    url: "https://github.com/exanauts/ExaModelsExamles.jl"
-    description: A collection of examples demonstrating the use of ExaModels.jl for various optimization problems, including power systems, optimal control problems, and COPS benchmark problems.
-  - name: "CUDSS.jl"
-    url: "https://github.com/exanauts/CUDSS.jl"
-    description: CUDSS.jl is a Julia interface to the NVIDIA cuDSS library. NVIDIA cuDSS provides three factorizations (LDU, LDLᵀ, LLᵀ) for solving sparse linear systems on GPUs.
-    
+  - category: "Solvers"
+    items:
+      - name: "MadNLP.jl"
+        url: "https://github.com/madsuite-org/MadNLP.jl"
+        description: "Nonlinear programming solver (filter line-search interior-point method) with GPU support"
+      - name: "MadIPM.jl"
+        url: "https://github.com/madsuite-org/MadIPM.jl"
+        description: "Linear and quadratic programming solver (Mehrotra predictor-corrector) with GPU support"
+      - name: "MadNCL.jl"
+        url: "https://github.com/madsuite-org/MadNCL.jl"
+        description: "Algorithm NCL as a MadNLP.jl extension, for infeasible or degenerate problems"
+      - name: "CCOpt.jl"
+        url: "https://github.com/madsuite-org/CCOpt.jl"
+        description: "Solver for mathematical programs with complementarity constraints (MPCCs)"
+  - category: "Modeling abstractions and algebraic modeling systems"
+    items:
+      - name: "ExaModels.jl"
+        url: "https://github.com/madsuite-org/ExaModels.jl"
+        description: "Algebraic modeling and automatic differentiation for GPUs, based on a SIMD abstraction of nonlinear programs"
+      - name: "ParametricNLPModels.jl"
+        url: "https://github.com/madsuite-org/ParametricNLPModels.jl"
+        description: "Parametric sensitivities for NLPModels.jl models"
+      - name: "MPCCModels.jl"
+        url: "https://github.com/madsuite-org/MPCCModels.jl"
+        description: "NLPModels.jl extension for modeling MPCCs, used by CCOpt.jl"
+      - name: "NLPModelsExtensions.jl"
+        url: "https://github.com/madsuite-org/NLPModelsExtensions.jl"
+        description: "Extensions to NLPModels.jl"
+      - name: "ExaPowerIO.jl"
+        url: "https://github.com/madsuite-org/ExaPowerIO.jl"
+        description: "Minimal reader for the MATPOWER power system data format"
+  - category: "Domain-specific libraries"
+    items:
+      - name: "ExaModelsPower.jl"
+        url: "https://github.com/madsuite-org/ExaModelsPower.jl"
+        description: "Optimal power flow models built on ExaModels.jl"
+      - name: "ExaModelsCollocation.jl"
+        url: "https://github.com/madsuite-org/ExaModelsCollocation.jl"
+        description: "Transcription of differential equations into algebraic constraints in ExaModels.jl"
+  - category: "Other tools"
+    items:
+      - name: "madsuite-py"
+        url: "https://github.com/madsuite-org/madsuite-py"
+        description: "Python interface to ExaModels.jl"
+      - name: "MadCheck.jl"
+        url: "https://github.com/madsuite-org/MadCheck.jl"
+        description: "Automatic diagnosis tool for nonlinear programs"
+  - category: "Benchmark libraries"
+    items:
+      - name: "COPSBenchmark.jl"
+        url: "https://github.com/madsuite-org/COPSBenchmark.jl"
+        description: "The COPS benchmark for nonlinear optimization, with JuMP and ExaModels backends"
+      - name: "ExaCUTEst.jl"
+        url: "https://github.com/madsuite-org/ExaCUTEst.jl"
+        description: "The CUTEst test set as ExaModels, on the CPU or a GPU"
+      - name: "ExaModelsSIF.jl"
+        url: "https://github.com/madsuite-org/ExaModelsSIF.jl"
+        description: "Pure-Julia SIF decoder: CUTEst problems as native ExaModels"
+      - name: "ExaMittelmann.jl"
+        url: "https://github.com/madsuite-org/ExaMittelmann.jl"
+        description: "Mittelmann's AMPL-NLP benchmark instances as ExaModels"
+      - name: "LuksanVlcekBenchmark.jl"
+        url: "https://github.com/madsuite-org/LuksanVlcekBenchmark.jl"
+        description: "Lukšan-Vlček scalable test problems as ExaModels"
+      - name: "MPCCbenchmark.jl"
+        url: "https://github.com/madsuite-org/MPCCbenchmark.jl"
+        description: "Large-scale mathematical programs with complementarity constraints"
+      - name: "MadNLPBenchmark.jl"
+        url: "https://github.com/madsuite-org/MadNLPBenchmark.jl"
+        description: "Baseline benchmark for tracking MadNLP.jl performance across commits"
+
 news:
   - date: "June 2025"
     entry: "MadSuite will be presented at IEEE PowerTech 2025 in the tutorial session on GPU-Accelerated Optimization for Power Systems with MadNLP and ExaModels."
     link: "https://2025.ieee-powertech.org/tutorials/#1744358367373-8b3025fb-3285"
     
-videos:
-  - date: "April 2024"
-    presenter: "Sungho Shin"
+talks:
+  - title: "IFAC 2026 pre-congress workshop"
+    date: "August 2026"
+    description: "GPU Acceleration in Optimization and Optimal Control"
+    links: [["Website", "https://madsuite.org/ifac2026/"], ["Notebooks", "https://github.com/madsuite-org/ifac2026-notebooks"]]
+  - title: "2025 INFORMS Annual Meeting"
+    date: "October 2025"
+    description: "Solving Large-Scale, Sparse, Constrained Nonlinear Optimization Problems on GPUs"
+    links: [["Slides", "https://github.com/madsuite-org/slides-informs-2025/blob/main/Shin-slides.pdf"]]
+  - title: "IEEE PowerTech 2025 tutorial"
+    date: "June 2025"
+    description: "GPU-Accelerated Optimization for Power Systems with MadNLP and ExaModels"
+    links: [["Website", "https://madsuite.org/powertech2025"]]
+  - title: "Talk by Sungho Shin"
+    date: "April 2024"
     description: "Large-Scale Nonlinear Programming on GPUs: State-of-the-Art and Future Prospects"
-    youtube: MzV9Crph4BA?si=1u50D-4JuFTisjN9
+    links: [["Video", "https://www.youtube.com/watch?v=MzV9Crph4BA"]]
+
 links:
   - name: "MadSuite"
     url: "https://github.com/MadNLP"
