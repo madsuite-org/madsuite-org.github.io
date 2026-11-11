@@ -16,8 +16,12 @@ jobs:
         uses: actions/checkout@v4
       - name: Build and deploy website
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
         run: |
+          # gh-pages accepts pushes only from a deploy key (repository ruleset)
+          install -m 600 /dev/null ~/deploy_key
+          printf '%s\n' "$DEPLOY_KEY" > ~/deploy_key
+          export GIT_SSH_COMMAND="ssh -i ~/deploy_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
           git config --global user.email "git@github.com"
           git config --global user.name "Github action runner"
           python3 -m venv venv

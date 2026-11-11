@@ -188,11 +188,7 @@ def deploy():
     subprocess.run(['git', 'init'], cwd=BUILD_DIR, check=True)
 
     # Set up the remote repository (assumes origin is set up)
-    # In GitHub Actions, push over HTTPS with the workflow token; locally, use SSH.
-    token = os.environ.get('GITHUB_TOKEN')
-    repo = os.environ.get('GITHUB_REPOSITORY', 'madsuite-org/madsuite-org.github.io')
-    remote = f'https://x-access-token:{token}@github.com/{repo}.git' if token else f'git@github.com:{repo}.git'
-    subprocess.run(['git', 'remote', 'add', 'origin', remote], cwd=BUILD_DIR, check=True)
+    subprocess.run(['git', 'remote', 'add', 'origin', 'git@github.com:madsuite-org/madsuite-org.github.io.git'], cwd=BUILD_DIR, check=True)
 
     # Checkout a new branch (or switch to it if it exists)
     subprocess.run(['git', 'checkout', '-B', branch_name], cwd=BUILD_DIR, check=True)
