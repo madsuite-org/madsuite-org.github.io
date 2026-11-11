@@ -84,9 +84,6 @@ packages:
         description: "Transcription of differential equations into algebraic constraints in ExaModels.jl"
   - category: "Other tools"
     items:
-      - name: "madsuite-py"
-        url: "https://github.com/madsuite-org/madsuite-py"
-        description: "Python interface to ExaModels.jl"
       - name: "MadCheck.jl"
         url: "https://github.com/madsuite-org/MadCheck.jl"
         description: "Automatic diagnosis tool for nonlinear programs"
